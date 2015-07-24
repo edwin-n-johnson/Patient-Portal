@@ -17,6 +17,13 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Emacs backup files
+*~
+
+# Python compiled files
+*.pyc
+*.pyo
+
 # =========================
 # Operating System Files
 # =========================
