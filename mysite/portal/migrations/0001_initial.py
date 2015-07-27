@@ -11,12 +11,22 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='User',
+            name='Patient',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('username', models.CharField(max_length=256)),
-                ('firstname', models.CharField(max_length=256)),
-                ('lastname', models.CharField(max_length=256)),
+                ('firstname', models.CharField(max_length=30)),
+                ('lastname', models.CharField(max_length=30)),
+                ('birthdate', models.DateField()),
+                ('email', models.CharField(max_length=256)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Visit',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('date', models.DateField()),
+                ('summary', models.CharField(max_length=256)),
+                ('patient', models.ForeignKey(to='portal.Patient')),
             ],
         ),
     ]
